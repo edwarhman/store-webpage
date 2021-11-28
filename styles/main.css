@@ -1,25 +1,161 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.6rem;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas:
+  "header header"
+  "content sidebar"
+  "footer footer";
+
+}
+
+@media (min-width: 61.25em) {
+  body {
+    display: grid;
+  }
+}
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: content;
+}
+
+aside { 
+  grid-area: sidebar;
+}
+
+footer {
+  grid-area: footer;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: #aaa;
+}
+
+form * {
+  font-size: inherit;
 }
 
 img {
-  height: 70%;
+  height: 16em;
   width: 100%;
 }
 
-/* main section */
-main {
-  display: grid;
-  gap: 1rem;
-  padding: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+/* header */
+header {
+  text-align: center;
+  background-color: darkred;
+  color: white;
+
 }
 
-.product-article {
-  
+/* main section */
+#products-container {
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+  padding: 1rem;
+
+  display: grid;
+  min-height: 75vh;
+}
+
+.product-item {
+  border: 2px solid #777;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  height: fit-content;
+  position: relative;
 }
 
 .product-item p { 
   float: right;
+}
+
+/* Filter section */
+.filter__menu {
+  align-items: center;
+  background-color: palegreen;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-size: 2rem;
+  height: 100vh;
+  justify-content: space-evenly;
+  left: 100%;
+  padding: 1.5rem;
+  position: fixed;
+  top: 0;
+}
+
+.filter__menu > * {
+  margin: 1rem;
+}
+
+.filter__menu.active {
+  left: unset;
+  right: 0;
+}
+
+.filter__menu::before {
+  content: 'x';
+  float: right;
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+
+@media (min-width: 61.25em) {
+  .filter {
+    background-color: palegreen;
+  }
+
+  .filter__menu {
+    height: initial;
+    position: initial;
+  }
+
+  .filter__menu::before {
+    content: initial;
+  }
+
+  .filter__open-button {
+    position: absolute;
+    right: 100%;
+  }
+}
+
+#search-bar {
+  border: 1px solid gray;
+  border-radius: 1rem;
+  padding-left: 1rem;
+}
+
+#submit-button {
+  border: 1px solid gray;
+  border-radius: 1rem;
+  padding: 1rem;
+  width: 75%;
+}
+
+.footer {
+  background-color: #000044;
+  color: white;
+  display: flex;
+  font-size: 1.8rem;
+  height: 22vh;
+  justify-content: flex-start;
+  padding: 2rem;
+}
+
+.footer > * {
+  padding: 0 1rem;
 }
