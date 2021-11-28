@@ -82,6 +82,12 @@ header {
 }
 
 /* Filter section */
+.filter__open-button {
+  margin-right: 1rem;
+  margin-top: 0.5rem;
+  text-align: right;
+}
+
 .filter__menu {
   align-items: center;
   background-color: palegreen;
@@ -90,11 +96,17 @@ header {
   flex-wrap: wrap;
   font-size: 2rem;
   height: 100vh;
-  justify-content: space-evenly;
   left: 100%;
   padding: 1.5rem;
   position: fixed;
   top: 0;
+  z-index: 100;
+}
+
+@media (min-width: 61.25em) {
+  .filter__menu {
+    justify-content: space-around;
+  }
 }
 
 .filter__menu > * {
@@ -111,6 +123,7 @@ header {
   float: right;
   font-size: 2rem;
   margin-right: 1rem;
+  align-self: flex-end;
 }
 
 @media (min-width: 61.25em) {
