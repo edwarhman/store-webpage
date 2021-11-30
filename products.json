@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Golden Retreaver",
+        "image": "golden-retreaver.jpg",
+        "price": 100,
+        "type": "large dog"
+    },
+    {
+        "name": "Pug",
+        "image": "pug.jpg",
+        "price": 87,
+        "type": "small dog"
+    },
+    {
+        "name": "Shiba Inu",
+        "image": "shiba-inu.jpg",
+        "price": 55,
+        "type": "medium-dog"
+    }
+]
