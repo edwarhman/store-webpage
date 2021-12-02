@@ -1,7 +1,7 @@
 [
     {
-        "name": "Golden Retreaver",
-        "image": "golden-retreaver.jpg",
+        "name": "Golden Retriever",
+        "image": "golden-retriever.jpg",
         "price": 100,
         "type": "large dog"
     },
