@@ -65,10 +65,8 @@ function initialize(products) {
   // Filter products according to the search value
   function selectProducts() {
     if (searchBar.value === "") {
-      console.log("search bar is empty");
       finalProducts = categoryProducts;
     } else {
-      console.log("search bar have a value");
       const search = searchBar.value;
       categoryProducts.forEach(product => {
         if(product.name.toLowerCase().indexOf(search.toLowerCase()) >= 0) {
