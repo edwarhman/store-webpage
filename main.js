@@ -1,3 +1,7 @@
+fetchProducts();
+
+
+// fetch products data
 function fetchProducts() {
   fetch("products.json")
     .then((response) => {
@@ -5,13 +9,13 @@ function fetchProducts() {
     })
     .then((json) => {
       let products = json;
-      console.log(products);
       initialize(products);
     })
     .catch((err) => {
       console.log("Fetch problem: " + err.message);
     });
 }
+
 
 function initialize(products) {
   // DOM element references
@@ -25,20 +29,26 @@ function initialize(products) {
   let categoryProducts = [];
   let finalProducts = [];
 
-  function selectCategory() {
+  submitButton.addEventListener("click", selectCategory);
+
+
+  // Filter products by category when necessary
+  function selectCategory(e) {
+
+    e.preventDefault();
+    // clear arrays to push items to them later
     categoryProducts = [];
     finalProducts = [];
 
+    // If filter values still the same, do not reload products
     if (categorySelector.value !== lastCategory || searchBar.value !== lastSearch) {
-
-      console.log(categorySelector.value, searchBar.value);
-
+      
+      // update last filter values
       lastCategory = categorySelector.value;
       lastSearch = searchBar.value;
 
       if (categorySelector.value === "all") {
         categoryProducts = products;
-        console.log("All");
       } else {
         products.forEach(product => {
           if (product.type === categorySelector.value) {
@@ -46,16 +56,17 @@ function initialize(products) {
           }
         });
       }
-    selectProducts();
+
+      selectProducts();
     }
   }
 
+
+  // Filter products according to the search value
   function selectProducts() {
     if (searchBar.value === "") {
-      console.log("search bar is empty");
       finalProducts = categoryProducts;
     } else {
-      console.log("search bar have a value");
       const search = searchBar.value;
       categoryProducts.forEach(product => {
         if(product.name.toLowerCase().indexOf(search.toLowerCase()) >= 0) {
@@ -65,9 +76,7 @@ function initialize(products) {
     }
     updateDisplay();
   }
-
-  // clear 
-  
+ 
   
   // clear the display and print the updated products
   function updateDisplay() {
@@ -89,6 +98,8 @@ function initialize(products) {
     })
   }
 
+
+  // Fetch product image to print
   function fetchBLob(product) {
     let url = "./images/" + product.image;
     fetch(url)
@@ -104,6 +115,8 @@ function initialize(products) {
       });
   }
 
+
+  // print products in main section (parameters: product dates, product image url)
   function printProduct(product, url) {
     // new DOM elements
     const article = document.createElement("article");
@@ -129,14 +142,4 @@ function initialize(products) {
     article.appendChild(content);
     productsContainer.appendChild(article);
   }
-
-  submitButton.addEventListener("click", (e) => {
-    e.preventDefault();
-    selectCategory();
-  });
-
-  const url = "images/" + products[0].image;
-  console.log(url);
-  }
-
-fetchProducts();
+}
