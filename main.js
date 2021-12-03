@@ -25,6 +25,31 @@ function initialize(products) {
   let categoryProducts = [];
   let finalProducts = [];
 
+  function selectCategory() {
+    categoryProducts = [];
+    finalProducts = [];
+
+    if (categorySelector.value !== lastCategory || searchBar.value !== lastSearch) {
+
+      console.log(categorySelector.value, searchBar.value);
+
+      lastCategory = categorySelector.value;
+      lastSearch = searchBar.value;
+
+      if (categorySelector.value === "all") {
+        categoryProducts = products;
+        console.log("All");
+      } else {
+        products.forEach(product => {
+          if (product.type === categorySelector.value) {
+            categoryProducts.push(product);
+          }
+        });
+      }
+    selectProducts();
+    }
+  }
+
   function selectProducts() {
     if (searchBar.value === "") {
       console.log("search bar is empty");
@@ -41,6 +66,9 @@ function initialize(products) {
     updateDisplay();
   }
 
+  // clear 
+  
+  
   // clear the display and print the updated products
   function updateDisplay() {
     // clear old products
@@ -104,9 +132,7 @@ function initialize(products) {
 
   submitButton.addEventListener("click", (e) => {
     e.preventDefault();
-    categoryProducts = products;
-    finalProducts = [];
-    selectProducts();
+    selectCategory();
   });
 
   const url = "images/" + products[0].image;
