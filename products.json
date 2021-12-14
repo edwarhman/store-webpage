@@ -1,20 +1,93 @@
 [
     {
-        "name": "Golden Retriever",
-        "image": "golden-retriever.jpg",
-        "price": 100,
-        "type": "large dog"
+        "name": "slippers",
+        "image": "slippers.webp",
+        "price": 10,
+        "type": "clothing"
     },
     {
-        "name": "Pug",
-        "image": "pug.jpg",
-        "price": 87,
-        "type": "small dog"
+        "name": "family pijama set",
+        "image": "pijama-set.webp",
+        "price": 18,
+        "type": "clothing"
     },
     {
-        "name": "Shiba Inu",
-        "image": "shiba-inu.jpg",
+        "name": "the night before christmas",
+        "image": "the-night-before-christmas-book.jpg",
         "price": 55,
-        "type": "medium dog"
+        "type": "book"
+    },
+    {
+      "name": "cake",
+      "image": "cake.webp",
+      "price": 10,
+      "type": "food"
+    },
+    {
+      "name": "scarf",
+      "image": "scarf.webp",
+      "price": 10,
+      "type": "clothing"
+    },
+    {
+      "name": "christmas ball ornaments",
+      "image": "christmas-ball-ornaments.webp",
+      "price": 10,
+      "type": "decoration"
+    },
+    {
+      "name": "christmas lights",
+      "image": "christmas-lights.webp",
+      "price": 10,
+      "type": "decoration"
+    },
+    {
+      "name": "christmas star topper",
+      "image": "christmas-star-topper.webp",
+      "price": 10,
+      "type": "decoration"
+    },
+    {
+      "name": "christmas-tree",
+      "image":"christmas-tree.webp",
+      "price": 50,
+      "type" : "decoration"
+    },
+    {
+      "name": "cookies",
+      "image": "cookies.jpg",
+      "price": 10,
+      "type": "food"
+    },
+    {
+      "name": "doll",
+      "image": "doll.webp",
+      "price": 10,
+      "type": "toy"
+    },
+    {
+      "name": "elf",
+      "image": "elf-book.jpg",
+      "price": 7,
+      "type": "book"
+    },
+    {
+      "name": "christmas hat",
+      "image": "christmas-hat.webp",
+      "price": 5,
+      "type": "clothing"
+    },
+    {
+      "name": "how the grinch stole christmas!",
+      "image": "grinch-book.jpg",
+      "price": 7,
+      "type": "book"
+    },
+    {
+      "name": "panettone",
+      "image": "panettone.webp",
+      "price": 10,
+      "type": "food"
     }
+
 ]
