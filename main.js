@@ -1,4 +1,4 @@
-fetchProducts();
+window.addEventListener("load", fetchProducts);
 
 
 // fetch products data
@@ -27,9 +27,10 @@ function initialize(products) {
   let lastSearch = "";
   let lastCategory = categorySelector.value;
   let categoryProducts = [];
-  let finalProducts = [];
+  let finalProducts = products;
 
   submitButton.addEventListener("click", selectCategory);
+  updateDisplay();
 
 
   // Filter products by category when necessary
@@ -142,4 +143,5 @@ function initialize(products) {
     article.appendChild(content);
     productsContainer.appendChild(article);
   }
+
 }
