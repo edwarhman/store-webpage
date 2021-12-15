@@ -110,9 +110,20 @@ header {
 
 /* Filter section */
 .filter__open-button {
-  margin-right: 1rem;
+  margin-right: 1.5em;
   margin-top: 0.5rem;
   text-align: right;
+}
+
+.filter__open-button::after {
+  content: "";
+  width: 1em;
+  height: 1em;
+  background-image: url("../filter-icon.svg");
+  background-repeat: no-repeat;
+  background-size: 1em;
+  position: absolute;
+  
 }
 
 .filter__menu {
