@@ -1,4 +1,24 @@
-window.addEventListener("load", fetchProducts);
+window.addEventListener("load", ()=> {
+  let openFilterButton = document.querySelector('.filter__open-button');
+  let filterMenu = document.querySelector('.filter__menu');
+
+  fetchProducts();
+
+  openFilterButton.addEventListener('click', ()=> {
+    console.log('click');
+    toggleFilterMenu();
+  });
+
+  filterMenu.addEventListener('click', e => {
+    if (e.target === filterMenu) {
+      toggleFilterMenu();
+    }
+  });
+
+  function toggleFilterMenu() {
+    filterMenu.classList.toggle('active');
+  }
+});
 
 
 // fetch products data
