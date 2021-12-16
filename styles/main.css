@@ -2,7 +2,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.6rem;
   grid-template-columns: 3fr 1fr;
-  grid-template-rows: 1fr 17fr 2fr;
+  grid-template-rows: 1fr 27fr 2fr;
   grid-template-areas:
   "header header"
   "content sidebar"
@@ -128,7 +128,8 @@ header {
 
 .filter__menu {
   align-items: center;
-  background-color: palegreen;
+  background-color: #005500;
+  color: #fff;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -166,7 +167,7 @@ header {
 
 @media (min-width: 61.25em) {
   .filter {
-    background-color: palegreen;
+    background-color: #050;
   }
 
   .filter__menu {
